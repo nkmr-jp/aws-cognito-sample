@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "amazon-cognito-identity-js": "^3.0.6",
+    "json-loader": "^0.5.7",
+    "webpack": "^4.28.0",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
+}
