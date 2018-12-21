@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --watch"
   },
   "dependencies": {
     "amazon-cognito-identity-js": "^3.0.6",
