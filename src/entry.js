@@ -1,9 +1,10 @@
+var env = require('./env');
 var ACI = require('amazon-cognito-identity-js');
 var getById = document.getElementById;
 
 var userPool = new ACI.CognitoUserPool({
-    UserPoolId: '', // Your user pool id here
-    ClientId: '' // Your client id here
+    UserPoolId: env.AWS_COGNITO_USER_POOL_ID,
+    ClientId: env.AWS_COGNITO_CLIENT_ID
 });
 
 function signUp(name, mail, phone, password) {

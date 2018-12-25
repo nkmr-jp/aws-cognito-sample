@@ -1,12 +1,21 @@
+## Setting env.js
+
+create `src/env.js` file. and write as follows. 
+
+```js
+export var AWS_COGNITO_USER_POOL_ID = ''; // Your user pool id here
+export var AWS_COGNITO_CLIENT_ID = '';  // Your client id here
+```
+
 ## Install and Build
 
-```
+```sh
 $ yarn
 $ yarn run build
 ```
 
 ## Server
-```
+```sh
 $ npm install -g superstatic
 $ superstatic -p 9001
 Superstatic started.
@@ -14,7 +23,7 @@ Visit http://localhost:9001 to view your app.
 ```
 
 ## LiveReload
-```
+```sh
 $ npm install -g livereload
 $ livereload . -w 500 -d
 ```
