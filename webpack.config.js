@@ -7,7 +7,7 @@ module.exports = {
   // html: './index.html',
   // Place output files in `./dist/my-app.js`
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/public/dist',
     filename: 'my-app.js'
   },
   module: {

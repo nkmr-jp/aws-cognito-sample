@@ -14,18 +14,19 @@ $ yarn
 $ yarn run build
 ```
 
-## Server
-```sh
-$ npm install -g superstatic
-$ superstatic -p 9001
-Superstatic started.
-Visit http://localhost:9001 to view your app.
-```
-
 ## LiveReload
 ```sh
 $ npm install -g livereload
 $ livereload . -w 500 -d
 ```
-
 - Install chrome extension [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?utm_source=chrome-ntp-icon)
+
+## Server
+```sh
+$ npm install -g superstatic
+$ cd public
+$ superstatic -p 9001
+Superstatic started.
+Visit http://localhost:9001 to view your app.
+```
+
