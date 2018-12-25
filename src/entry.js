@@ -1,57 +1,38 @@
-// Modules, e.g. Webpack:
+var ACI = require('amazon-cognito-identity-js');
+var getById = document.getElementById;
 
-// console.log(process.env.NODE_ENV);
-window.console.log('hoge3');
+var userPool = new ACI.CognitoUserPool({
+    UserPoolId: '', // Your user pool id here
+    ClientId: '' // Your client id here
+});
 
-function signUp(name,mail,phone,password) {
-    var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
-    var CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
+function signUp(name, mail, phone, password) {
+    var attributeList = [
+        new ACI.CognitoUserAttribute({Name: 'email', Value: mail}),
+        new ACI.CognitoUserAttribute({Name: 'phone_number', Value: phone})
+    ];
 
-    var poolData = {
-        UserPoolId: '', // Your user pool id here
-        ClientId: '' // Your client id here
-    };
-    var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-    var attributeList = [];
-    var dataEmail = {
-        Name: 'email',
-        Value: mail
-    };
-    var dataPhoneNumber = {
-        Name: 'phone_number',
-        Value: phone
-    };
-
-    var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
-    var attributePhoneNumber = new AmazonCognitoIdentity.CognitoUserAttribute(dataPhoneNumber);
-
-    attributeList.push(attributeEmail);
-    attributeList.push(attributePhoneNumber);
-
-    userPool.signUp(
-        name,
-        password,
-        attributeList,
-        null, function (err, result) {
+    userPool.signUp(name, password, attributeList, null,
+        function (err, result) {
             if (err) {
                 alert(err.message || JSON.stringify(err));
                 return;
             }
             var cognitoUser = result.user;
             console.log('user name is ' + cognitoUser.getUsername());
-        });
+        }
+    );
 }
 
-const myForm = document.querySelector('.signup');
-myForm.addEventListener('submit', handleForm, false);
+const signUpForm = document.querySelector('.signup');
+signUpForm.addEventListener('submit', handleSignUp, false);
 
-function handleForm(event){
+function handleSignUp(event) {
     event.preventDefault();
-    var name = document.getElementById('InputName').value;
-    var mail = document.getElementById('InputEmail').value;
-    var phone = document.getElementById('InputPhone').value;
-    var password = document.getElementById('InputPassword').value;
-    signUp(name,mail,phone,password);
-    myForm.submit();
+    var name = getById('InputName').value;
+    var mail = getById('InputEmail').value;
+    var phone = getById('InputPhone').value;
+    var password = getById('InputPassword').value;
+    signUp(name, mail, phone, password);
+    signUpForm.submit();
 }
-
