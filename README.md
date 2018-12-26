@@ -1,6 +1,8 @@
-# Install
+# aws-cognito-sample
 
-## Setting env.js
+## Install
+
+### Setting env.js
 
 create `src/env.js` file. and write as follows. 
 
@@ -11,21 +13,21 @@ export var AWS_COGNITO_CLIENT_ID = '';  // Your client id here
 export var AWS_ID_POOL_ID = '';
 ```
 
-## Install and Build
+### Install and Build
 
 ```sh
 $ yarn
 $ yarn run build
 ```
 
-## LiveReload
+### LiveReload
 ```sh
 $ npm install -g livereload
 $ livereload . -w 500 -d
 ```
 - Install chrome extension [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?utm_source=chrome-ntp-icon)
 
-## Server
+### Server
 ```sh
 $ npm install -g superstatic
 $ cd public
@@ -34,15 +36,15 @@ Superstatic started.
 Visit http://localhost:9001 to view your app.
 ```
 
-# Memo
+## Memo
 
-## AWS Cognito Document
+### AWS Cognito Document
 - [tutorial: Javascript](https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/tutorial-integrating-user-pools-javascript.html)
 - [ID Pool](https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/identity-pools.html)
 - [github: amazon-cognito-identity-js](https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage)
 
 
-## Commit Message
+### Commit Message
 
 | emoji    | description     |
 | :------------- | :------------- |
