@@ -1,6 +1,6 @@
-// require("aws-sdk/dist/aws-sdk");
-// var AWS = window.AWS;
-// var env = require('./env');
+require("aws-sdk/dist/aws-sdk");
+var AWS = window.AWS;
+var env = require('./env');
 var cognito = require('./cognito');
 var util = require('./util');
 var form = document.getElementById('FormLogin');
@@ -31,11 +31,13 @@ function _runCognito(username, password) {
     var cognitoUser = new cognito.ACI.CognitoUser(userData);
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
-            var accessToken = result.getAccessToken().getJwtToken();
-            _showUserPage()
+            var accessToken = result.idToken.jwtToken;
+            // var accessToken = result.getAccessToken().getJwtToken();
+            _showUserPage();
+            _getCredentials(accessToken);
         },
         onFailure: function (err) {
-            alert(err);
+            alert(err.message || JSON.stringify(err));
         },
         mfaRequired: function (codeDeliveryDetails) {
             var verificationCode = prompt('Please input verification code', '');
@@ -47,4 +49,23 @@ function _runCognito(username, password) {
 function _showUserPage() {
     util.switchDisplayContainer('UserPageContainer');
     document.getElementById('username').innerText = cognito.userPool.getCurrentUser().username
+}
+
+function _getCredentials(accessToken) {
+    // window.console.log(accessToken);
+    AWS.config.region = env.AWS_REGION;
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: env.AWS_ID_POOL_ID,
+        Logins: {
+            ['cognito-idp.' + env.AWS_REGION + '.amazonaws.com/' + env.AWS_COGNITO_USER_POOL_ID]: accessToken
+        }
+    });
+
+    AWS.config.credentials.get(function (err) {
+        if (err) {
+            window.console.log(err);
+        } else {
+            console.log('Successfully logged!');
+        }
+    });
 }

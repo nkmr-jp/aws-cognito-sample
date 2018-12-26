@@ -8,6 +8,7 @@ create `src/env.js` file. and write as follows.
 export var AWS_REGION = '';
 export var AWS_COGNITO_USER_POOL_ID = ''; // Your user pool id here
 export var AWS_COGNITO_CLIENT_ID = '';  // Your client id here
+export var AWS_ID_POOL_ID = '';
 ```
 
 ## Install and Build
