@@ -6,8 +6,14 @@ var util = require('./util');
 var form = document.getElementById('FormLogin');
 
 export function init() {
-    util.switchDisplayContainer('LoginContainer');
-    form.addEventListener('submit', _handleForm, false);
+    var cognitoUser = cognito.userPool.getCurrentUser();
+    if (cognitoUser) {
+        _showUserPage();
+    } else {
+        util.switchDisplayContainer('LoginContainer');
+        form.addEventListener('submit', _handleForm, false);
+    }
+    window.console.log(cognitoUser);
 }
 
 function _handleForm(event) {
@@ -26,7 +32,7 @@ function _runCognito(username, password) {
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
             var accessToken = result.getAccessToken().getJwtToken();
-            window.console.log('token: '+accessToken);
+            _showUserPage()
         },
         onFailure: function (err) {
             alert(err);
@@ -36,4 +42,9 @@ function _runCognito(username, password) {
             cognitoUser.sendMFACode(verificationCode, this);
         }
     });
+}
+
+function _showUserPage() {
+    util.switchDisplayContainer('UserPageContainer');
+    document.getElementById('username').innerText = cognito.userPool.getCurrentUser().username
 }
