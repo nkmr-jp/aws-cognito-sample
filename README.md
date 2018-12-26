@@ -1,3 +1,6 @@
+## Cognito Document
+- https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage
+
 ## Setting env.js
 
 create `src/env.js` file. and write as follows. 

@@ -35,5 +35,5 @@ function _cognitoCallBack(err, result) {
     }
     var cognitoUser = result.user;
     console.log('user name is ' + cognitoUser.getUsername());
-    window.location.hash='#confirm'
+    window.location.hash = '#confirm'
 }
