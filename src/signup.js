@@ -1,34 +1,29 @@
-var env = require('./env');
-var ACI = require('amazon-cognito-identity-js');
-var userPool = new ACI.CognitoUserPool({
-    UserPoolId: env.AWS_COGNITO_USER_POOL_ID,
-    ClientId: env.AWS_COGNITO_CLIENT_ID
-});
+var cognito = require('./cognito');
 var form = document.getElementById('FormSingUp');
 
-export function initSignUp() {
-    form.addEventListener('submit', _handleSignUp, false);
+export function init() {
+    form.addEventListener('submit', _handleForm, false);
 }
 
-function _signUp(event, name, mail, phone, password) {
-    var attributeList = [
-        new ACI.CognitoUserAttribute({Name: 'email', Value: mail}),
-        new ACI.CognitoUserAttribute({Name: 'phone_number', Value: phone})
-    ];
-
-    userPool.signUp(name, password, attributeList, null,
-        _cognitoCallBack
-    );
-}
-
-function _handleSignUp(event) {
+function _handleForm(event) {
     event.preventDefault();
-    _signUp(
+    _runCognito(
         event,
         document.getElementById('InputName').value,
         document.getElementById('InputEmail').value,
         document.getElementById('InputPhone').value,
         document.getElementById('InputPassword').value
+    );
+}
+
+function _runCognito(event, name, mail, phone, password) {
+    var attributeList = [
+        new cognito.ACI.CognitoUserAttribute({Name: 'email', Value: mail}),
+        new cognito.ACI.CognitoUserAttribute({Name: 'phone_number', Value: phone})
+    ];
+
+    cognito.userPool.signUp(name, password, attributeList, null,
+        _cognitoCallBack
     );
 }
 
