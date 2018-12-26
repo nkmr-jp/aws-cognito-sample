@@ -1,7 +1,9 @@
 var cognito = require('./cognito');
-var form = document.getElementById('FormSignUp');
+var util = require('./util');
+var form = document.getElementById('FormSignup');
 
 export function init() {
+    util.switchDisplayContainer('SignupContainer');
     form.addEventListener('submit', _handleForm, false);
 }
 
@@ -33,5 +35,5 @@ function _cognitoCallBack(err, result) {
     }
     var cognitoUser = result.user;
     console.log('user name is ' + cognitoUser.getUsername());
-    form.submit()
+    window.location.hash='#confirm'
 }

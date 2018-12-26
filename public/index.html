@@ -8,13 +8,40 @@
     <title>Login</title>
 </head>
 <body>
-<div class="container">
+
+<!-- #login -->
+<div class="container" id="LoginContainer">
     <h1>Login</h1>
-    <p>Login | <a href="signup.html">Sing Up</a></p>
-    <form class="signup" id="FormSingUp" action="#" method="post">
+    <p>Login | <a href="#signup">Sing Up</a></p>
+    <form id="FormSingUp">
+        <div class="form-group">
+            <label for="InputSignInName">User name</label>
+            <input type="text" class="form-control" id="InputSignInName">
+        </div>
+        <div class="form-group">
+            <label for="InputSignInPassword">Password</label>
+            <input type="password" class="form-control" id="InputSignInPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- #signup -->
+<div class="container" id="SignupContainer">
+    <h1>Sign up</h1>
+    <p><a href="#">Login</a> | Sing Up</p>
+    <form id="FormSignup">
         <div class="form-group">
             <label for="InputName">User name</label>
             <input type="text" class="form-control" id="InputName">
+        </div>
+        <div class="form-group">
+            <label for="InputEmail">Email address</label>
+            <input type="email" class="form-control" id="InputEmail">
+        </div>
+        <div class="form-group">
+            <label for="InputPhone">Phone number</label>
+            <input type="tel" class="form-control" id="InputPhone">
         </div>
         <div class="form-group">
             <label for="InputPassword">Password</label>
@@ -22,6 +49,29 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+</div>
+
+<!-- #confirm -->
+<div class="container" id="ConfirmContainer">
+    <form id="FormConfirm">
+        <div class="form-group">
+            <label for="InputCode">Code</label>
+            <input type="text" class="form-control" id="InputCode">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- #complete -->
+<div class="container" id="CompleteContainer">
+    <div class="alert alert-success" role="alert">Complete</div>
+    <a href="#logout">Logout</a>
+</div>
+
+<!-- #logout -->
+<div class="container" id="LogoutContainer">
+    <div class="alert alert-success" role="alert">Logout</div>
+    <a href="#">Top</a>
 </div>
 
 <script src="./dist/my-app.js"></script>
