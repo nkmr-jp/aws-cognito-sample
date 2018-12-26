@@ -4,7 +4,6 @@ var confirm = require('./confirm');
 var complete = require('./complete');
 var logout = require('./logout');
 
-
 function rooter() {
     switch (window.location.hash) {
         case '#':

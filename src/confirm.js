@@ -10,7 +10,7 @@ export function init() {
 function _handleForm(event) {
     event.preventDefault();
     _runCognito(
-        document.getElementById('InputConfirmName').value,
+        document.getElementById('InputConfirmUserName').value,
         document.getElementById('InputConfirmCode').value,
     );
 }

@@ -1,4 +1,5 @@
 ## Cognito Document
+- https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/tutorial-integrating-user-pools-javascript.html#tutorial-integrating-user-pools-console-javascript
 - https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage
 
 ## Setting env.js
@@ -6,6 +7,7 @@
 create `src/env.js` file. and write as follows. 
 
 ```js
+export var AWS_REGION = '';
 export var AWS_COGNITO_USER_POOL_ID = ''; // Your user pool id here
 export var AWS_COGNITO_CLIENT_ID = '';  // Your client id here
 ```
