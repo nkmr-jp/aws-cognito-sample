@@ -37,6 +37,7 @@ Visit http://localhost:9001 to view your app.
 
 ## AWS Cognito Document
 - [tutorial: Javascript](https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/tutorial-integrating-user-pools-javascript.html)
+- [ID Pool](https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/identity-pools.html)
 - [github: amazon-cognito-identity-js](https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage)
 
 
