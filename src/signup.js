@@ -4,10 +4,10 @@ var userPool = new ACI.CognitoUserPool({
     UserPoolId: env.AWS_COGNITO_USER_POOL_ID,
     ClientId: env.AWS_COGNITO_CLIENT_ID
 });
-var signUpForm = document.getElementById('FormSingUp');
+var form = document.getElementById('FormSingUp');
 
 export function initSignUp() {
-    signUpForm.addEventListener('submit', _handleSignUp, false);
+    form.addEventListener('submit', _handleSignUp, false);
 }
 
 function _signUp(event, name, mail, phone, password) {
@@ -39,5 +39,5 @@ function _cognitoCallBack(err, result) {
     }
     var cognitoUser = result.user;
     console.log('user name is ' + cognitoUser.getUsername());
-    signUpForm.submit()
+    form.submit()
 }
