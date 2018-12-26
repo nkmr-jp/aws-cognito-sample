@@ -1,6 +1,4 @@
-## Cognito Document
-- https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/tutorial-integrating-user-pools-javascript.html#tutorial-integrating-user-pools-console-javascript
-- https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage
+# Install
 
 ## Setting env.js
 
@@ -34,6 +32,13 @@ $ superstatic -p 9001
 Superstatic started.
 Visit http://localhost:9001 to view your app.
 ```
+
+# Memo
+
+## AWS Cognito Document
+- [tutorial: Javascript](https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/tutorial-integrating-user-pools-javascript.html)
+- [github: amazon-cognito-identity-js](https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage)
+
 
 ## Commit Message
 
