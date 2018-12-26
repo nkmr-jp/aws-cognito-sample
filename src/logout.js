@@ -8,7 +8,6 @@ export function init() {
     var cognitoUser = cognito.userPool.getCurrentUser();
     if (cognitoUser) {
         if (AWS.config.credentials && AWS.config.credentials.clearCachedId) {
-            window.console.log(AWS.config.credentials);
             AWS.config.credentials.clearCachedId();
         }
         cognitoUser.signOut();

@@ -52,7 +52,6 @@ function _showUserPage() {
 }
 
 function _getCredentials(accessToken) {
-    // window.console.log(accessToken);
     AWS.config.region = env.AWS_REGION;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
         IdentityPoolId: env.AWS_ID_POOL_ID,
