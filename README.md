@@ -1,5 +1,14 @@
 # aws-cognito-sample
 
+This is a sample application of Cognito made with reference to AWS document.
+
+can do the following.
+
+* signup
+* login
+* logout
+* get aws credentials
+
 ## Install
 
 ### Setting env.js
