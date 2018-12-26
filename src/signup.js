@@ -8,7 +8,6 @@ export function init() {
 function _handleForm(event) {
     event.preventDefault();
     _runCognito(
-        event,
         document.getElementById('InputName').value,
         document.getElementById('InputEmail').value,
         document.getElementById('InputPhone').value,
@@ -16,7 +15,7 @@ function _handleForm(event) {
     );
 }
 
-function _runCognito(event, name, mail, phone, password) {
+function _runCognito(name, mail, phone, password) {
     var attributeList = [
         new cognito.ACI.CognitoUserAttribute({Name: 'email', Value: mail}),
         new cognito.ACI.CognitoUserAttribute({Name: 'phone_number', Value: phone})
