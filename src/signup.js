@@ -1,5 +1,5 @@
 var cognito = require('./cognito');
-var form = document.getElementById('FormSingUp');
+var form = document.getElementById('FormSignUp');
 
 export function init() {
     form.addEventListener('submit', _handleForm, false);

@@ -42,6 +42,7 @@ Visit http://localhost:9001 to view your app.
 | :memo: | Writing docs. |
 | :construction: | Work in progress. |
 | :wrench: | Changing configuration files. |
+| :pencil2: | Fixing typos. |
 
 
 reference:
