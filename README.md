@@ -30,3 +30,19 @@ Superstatic started.
 Visit http://localhost:9001 to view your app.
 ```
 
+## Commit Message
+
+| emoji    | description     |
+| :------------- | :------------- |
+| :tada:  | Initial commit. |
+| :art:  | Improving structure / format of the code. |
+| :bug: | Fixing a bug. |
+| :fire: | Removing code or files. |
+| :sparkles: | Introducing new features. |
+| :memo: | Writing docs. |
+| :construction: | Work in progress. |
+| :wrench: | Changing configuration files. |
+
+
+reference:
+[gitmoji | An emoji guide for your commit messages](https://gitmoji.carloscuesta.me/)
