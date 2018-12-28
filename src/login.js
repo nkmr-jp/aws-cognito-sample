@@ -12,6 +12,7 @@ export function init() {
     } else {
         util.switchDisplayContainer('LoginContainer');
         form.addEventListener('submit', _handleForm, false);
+        _setOidcLink();
     }
     window.console.log(cognitoUser);
 }
@@ -67,4 +68,8 @@ function _getCredentials(accessToken) {
             console.log('Successfully logged!');
         }
     });
+}
+
+function _setOidcLink() {
+    document.getElementById('OidcLink').href=cognito.OIDC_LOGIN_URL
 }
