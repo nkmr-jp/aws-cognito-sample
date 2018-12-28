@@ -7,7 +7,7 @@ export var userPool = new ACI.CognitoUserPool({
 });
 export var OIDC_LOGIN_URL = 'https://'
     + env.AWS_OPENID_CONNECT.AppWebDomain
-    + '/login?response_type=code&cliend_id='
+    + '/login?response_type=code&client_id='
     + env.AWS_COGNITO_CLIENT_ID
     + '&redirect_uri='
     + env.AWS_OPENID_CONNECT.RedirectUriSignIn
