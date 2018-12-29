@@ -12,7 +12,8 @@ export function init() {
     } else {
         util.switchDisplayContainer('LoginContainer');
         form.addEventListener('submit', _handleForm, false);
-        _setOidcLink();
+        _setCognitoLoginLink();
+        _setLineLoginLink();
     }
     window.console.log(cognitoUser);
 }
@@ -26,8 +27,8 @@ function _handleForm(event) {
 }
 
 function _runCognito(username, password) {
-    var authenticationData = {Username: username, Password: password,};
-    var userData = {Username: username, Pool: cognito.userPool};
+    var authenticationData = { Username: username, Password: password };
+    var userData = { Username: username, Pool: cognito.userPool };
     var authenticationDetails = new cognito.ACI.AuthenticationDetails(authenticationData);
     var cognitoUser = new cognito.ACI.CognitoUser(userData);
     cognitoUser.authenticateUser(authenticationDetails, {
@@ -70,6 +71,10 @@ function _getCredentials(accessToken) {
     });
 }
 
-function _setOidcLink() {
-    document.getElementById('CognitoLink').href=cognito.COGNITO_HOSTED_LOGIN_URL
+function _setCognitoLoginLink() {
+    document.getElementById('CognitoLink').href = cognito.COGNITO_HOSTED_LOGIN_URL
+}
+
+function _setLineLoginLink() {
+    document.getElementById('LineLoginLink').href = cognito.LINE_LOGIN_URL
 }

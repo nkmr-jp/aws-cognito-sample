@@ -8,6 +8,7 @@ can do the following.
 * login
 * logout
 * get aws credentials
+* Openid Connect (oidc) login. (this sample uses 'Line Login')
 
 ## Install
 
