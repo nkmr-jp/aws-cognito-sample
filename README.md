@@ -8,6 +8,7 @@ can do the following.
 * login
 * logout
 * get aws credentials
+* Openid Connect (oidc) login. (this sample uses 'Line Login')
 
 ## Install
 
@@ -20,6 +21,7 @@ export var AWS_REGION = '';
 export var AWS_COGNITO_USER_POOL_ID = ''; // Your user pool id here
 export var AWS_COGNITO_CLIENT_ID = '';  // Your client id here
 export var AWS_ID_POOL_ID = '';
+export var AWS_COGNITO_APP_WEB_DMAIN = 'xxxxx.auth.<region>.amazoncognito.com';
 ```
 
 ### Install and Build
@@ -32,7 +34,7 @@ $ yarn run build
 ### LiveReload
 ```sh
 $ npm install -g livereload
-$ livereload . -w 500 -d
+$ livereload . -w 1000 -d
 ```
 - Install chrome extension [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?utm_source=chrome-ntp-icon)
 
@@ -51,7 +53,11 @@ Visit http://localhost:9001 to view your app.
 - [tutorial: Javascript](https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/tutorial-integrating-user-pools-javascript.html)
 - [ID Pool](https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/identity-pools.html)
 - [github: amazon-cognito-identity-js](https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage)
+- [github: amazon-cognito-auth-js](https://github.com/aws/amazon-cognito-auth-js#usage)
 
+### Line Document
+- [Line Login(web)](https://developers.line.biz/ja/docs/line-login/web/integrate-line-login/)
+- [Social API v2.1](https://developers.line.biz/ja/reference/social-api/)
 
 ### Commit Message
 
