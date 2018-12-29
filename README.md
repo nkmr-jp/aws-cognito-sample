@@ -20,19 +20,7 @@ export var AWS_REGION = '';
 export var AWS_COGNITO_USER_POOL_ID = ''; // Your user pool id here
 export var AWS_COGNITO_CLIENT_ID = '';  // Your client id here
 export var AWS_ID_POOL_ID = '';
-export var AWS_OPENID_CONNECT = {
-  ClientId          : 'xxxxxxxxxxxxxxxx',
-  AppWebDomain      : 'xxxxxxxxx.auth.<region>.amazoncognito.com',
-  TokenScopesArray  : [
-    'profile',
-    'email',
-    'openid',
-    'aws.cognito.signin.user.admin',
-    'phone'
-  ],
-  RedirectUriSignIn : 'http://xxxx/idpresponse',
-  RedirectUriSignOut: 'http://xxxx'
-}
+export var AWS_COGNITO_APP_WEB_DMAIN = 'xxxxx.auth.<region>.amazoncognito.com';
 ```
 
 ### Install and Build

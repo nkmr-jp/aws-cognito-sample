@@ -5,10 +5,26 @@ export var userPool = new ACI.CognitoUserPool({
     UserPoolId: env.AWS_COGNITO_USER_POOL_ID,
     ClientId  : env.AWS_COGNITO_CLIENT_ID
 });
-export var OIDC_LOGIN_URL = 'https://'
-    + env.AWS_OPENID_CONNECT.AppWebDomain
+
+export var OPENID_CONNECT = {
+    ClientId          : env.AWS_COGNITO_CLIENT_ID,
+    AppWebDomain      : env.AWS_COGNITO_APP_WEB_DMAIN,
+    RedirectUriSignIn : 'http://localhost:9001/idpresponse.html',
+    RedirectUriSignOut: 'http://localhost:9001',
+    TokenScopesArray  : [
+        'profile',
+        'email',
+        'openid',
+        'aws.cognito.signin.user.admin',
+        'phone'
+    ],
+    UserPoolId        : env.AWS_COGNITO_USER_POOL_ID
+}
+
+export var COGNITO_HOSTED_LOGIN_URL = 'https://'
+    + env.AWS_COGNITO_APP_WEB_DMAIN
     + '/login?response_type=code&client_id='
     + env.AWS_COGNITO_CLIENT_ID
     + '&redirect_uri='
-    + env.AWS_OPENID_CONNECT.RedirectUriSignIn
+    + OPENID_CONNECT.RedirectUriSignIn
 

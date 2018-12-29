@@ -71,5 +71,5 @@ function _getCredentials(accessToken) {
 }
 
 function _setOidcLink() {
-    document.getElementById('OidcLink').href=cognito.OIDC_LOGIN_URL
+    document.getElementById('CognitoLink').href=cognito.COGNITO_HOSTED_LOGIN_URL
 }
