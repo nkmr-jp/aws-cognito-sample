@@ -55,6 +55,9 @@ Visit http://localhost:9001 to view your app.
 - [github: amazon-cognito-identity-js](https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js#usage)
 - [github: amazon-cognito-auth-js](https://github.com/aws/amazon-cognito-auth-js#usage)
 
+### Line Document
+- [Line Login(web)](https://developers.line.biz/ja/docs/line-login/web/integrate-line-login/)
+- [Social API v2.1](https://developers.line.biz/ja/reference/social-api/)
 
 ### Commit Message
 
