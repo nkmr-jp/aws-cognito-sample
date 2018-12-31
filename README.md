@@ -72,6 +72,7 @@ Visit http://localhost:9001 to view your app.
 | :construction: | Work in progress. |
 | :wrench: | Changing configuration files. |
 | :pencil2: | Fixing typos. |
+| :zap: | Improving performance. |
 
 
 reference:
