@@ -21,7 +21,7 @@ export var AWS_REGION = '';
 export var AWS_COGNITO_USER_POOL_ID = ''; // Your user pool id here
 export var AWS_COGNITO_CLIENT_ID = '';  // Your client id here
 export var AWS_ID_POOL_ID = '';
-export var AWS_COGNITO_APP_WEB_DMAIN = 'xxxxx.auth.<region>.amazoncognito.com';
+export var AWS_COGNITO_APP_WEB_DOMAIN = 'xxxxx.auth.<region>.amazoncognito.com';
 ```
 
 ### Install and Build
